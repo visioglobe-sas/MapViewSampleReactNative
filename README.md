@@ -8,7 +8,7 @@ Currently, only iOS (swift) version is available.
 * npm install
 * cd ios/
 * pod install
-* If you have a licence, dowload the SDK in Visioglobe developer site
+* If you have a licence, dowload the SDK in [Visioglobe developer site](https://developer.visioglobe.com/visiomoveessential/)
 * In the dowloaded folder, copy VisioMoveEssential.xcframework, VisioMoveEssential.bundle and VisioMoveEssentialStrings.bundle and add them to the ios folder
 * Open the MapViewSampleReactNative.xcworkspace
 * Build the project, if the "VisioMoveEssential.xcframework" is still missing but you have already added it, you can make a "clean" before rebuilding. 

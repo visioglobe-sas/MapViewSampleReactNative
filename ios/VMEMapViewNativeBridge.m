@@ -9,7 +9,7 @@
 
 @interface RCT_EXTERN_MODULE(VMEMapViewNativeBridge,NSObject)
 
-RCT_EXTERN_METHOD(queryAllPlaces:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(queryAllPlaceIDs:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 
 RCT_EXTERN_METHOD(setPlacesColor:(NSDictionary*<NSString*,NSString*>)pPlacesIdColor)
 

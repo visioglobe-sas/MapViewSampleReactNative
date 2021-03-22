@@ -37,7 +37,7 @@ open class VMEMapViewNativeBridge: NSObject, RCTBridgeModule {
   }
   
   //Places
-  @objc func queryAllPlaces(_ resolve: RCTPromiseResolveBlock, rejecter reject:RCTPromiseRejectBlock) -> Void {
+  @objc func queryAllPlaceIDs(_ resolve: RCTPromiseResolveBlock, rejecter reject:RCTPromiseRejectBlock) -> Void {
     let res = VMEMapViewNativeBridge.sharedInstance.mMapView.queryAllPlaceIDs()
     if(!res.isEmpty){
       resolve(res)

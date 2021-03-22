@@ -45,9 +45,9 @@ class VMEMapView extends React.Component {
     return <VMEMapViewNative {...this.props} />;
   }
 
-  queryAllPlaces = async () => {
+  queryAllPlaceIDs = async () => {
     try {
-      const allPlaces = await VMEMapViewNativeBridge.queryAllPlaces();
+      const allPlaces = await VMEMapViewNativeBridge.queryAllPlaceIDs();
       if(this.callback !== undefined){
         this.callback(allPlaces);
       }

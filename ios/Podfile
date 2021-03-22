@@ -13,12 +13,3 @@ target 'MapViewSampleReactNative' do
     # Pods for testing
   end
 end
-
-target 'MapViewSampleReactNative-tvOS' do
-  # Pods for MapViewSampleReactNative-tvOS
-
-  target 'MapViewSampleReactNative-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end

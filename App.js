@@ -28,7 +28,7 @@ export default class App extends Component {
           
           <TouchableOpacity style={styles.button} onPress={() => {
             let newColor = randomColor();
-            this.mMapView.current.queryAllPlaces();
+            this.mMapView.current.queryAllPlaceIDs();
 
             var _this = this;
 
@@ -53,7 +53,7 @@ export default class App extends Component {
             <Text style={styles.buttonText}>Some places color</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {
-            this.mMapView.current.queryAllPlaces();
+            this.mMapView.current.queryAllPlaceIDs();
 
             var _this = this;
 

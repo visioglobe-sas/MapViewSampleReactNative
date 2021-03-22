@@ -54,40 +54,38 @@ class VMEMapViewNative: RCTViewManager,VMELifeCycleListener,VMEPlaceListener, VM
   
   private func getRouteResultDictionnary(result: VMERouteResult)-> Dictionary<String,Any>{
     var lRouteResult = Dictionary<String,Any>()
-    /*lRouteResult["duration"] = result.duration
+     lRouteResult["duration"] = result.duration
      lRouteResult["length"] = result.length
      lRouteResult["destinations"] = result.destinations
-     
-     
-     var lRouteResultSegments = Dictionary<String,Any>()
-     var lSegments = [Any]()
+    
+    var lSegments = [Any]()
      for segment in result.segments {
-     lRouteResultSegments["duration"] = segment.duration
-     lRouteResultSegments["length"] = segment.length
-     lRouteResultSegments["floorTransitionId"] = segment.floorTransitionId
-     lRouteResultSegments["floorTransitionType"] = segment.floorTransitionType
-     lRouteResultSegments["maneuverType"] = segment.maneuverType
-     
-     var lRouteResultSegmentsPath = [Any]()
-     for path in segment.path {
-     var positionToObject = Dictionary<String, Any>()
-     var positionSceneContext = Dictionary<String,Any>()
-     positionSceneContext["isOutside"] = path.scene.isOutside()
-     positionSceneContext["buildingID"] = path.scene.buildingID
-     positionSceneContext["floorID"] = path.scene.floorID
-     
-     positionToObject["altitude"] = path.altitude
-     positionToObject["latitude"] = path.latitude
-     positionToObject["longitude"] = path.longitude
-     positionToObject["scene"] = positionSceneContext
-     lRouteResultSegmentsPath.append(positionToObject)
+      var lRouteResultSegments = Dictionary<String,Any>()
+       lRouteResultSegments["duration"] = segment.duration
+       lRouteResultSegments["length"] = segment.length
+       lRouteResultSegments["floorTransitionId"] = segment.floorTransitionId
+       lRouteResultSegments["floorTransitionType"] = segment.floorTransitionType
+       lRouteResultSegments["maneuverType"] = segment.maneuverType
+
+      var lRouteResultSegmentsPath = [Any]()
+       for path in segment.path {
+         var positionToObject = Dictionary<String, Any>()
+         var positionSceneContext = Dictionary<String,Any>()
+         positionSceneContext["isOutside"] = path.scene.isOutside()
+         positionSceneContext["buildingID"] = path.scene.buildingID
+         positionSceneContext["floorID"] = path.scene.floorID
+         
+         positionToObject["altitude"] = path.altitude
+         positionToObject["latitude"] = path.latitude
+         positionToObject["longitude"] = path.longitude
+         positionToObject["scene"] = positionSceneContext
+         lRouteResultSegmentsPath.append(positionToObject)
+       }
+      lRouteResultSegments["path"] = lRouteResultSegmentsPath
+      lSegments.append(lRouteResultSegments)
      }
      
-     lSegments.append(lRouteResultSegments)
-     }
-     
-     lRouteResultSegments["path"] = lSegments
-     lRouteResult["path"] =*/
+    lRouteResult["segments"] = lSegments
     
     return lRouteResult
   }
@@ -137,7 +135,7 @@ class VMEMapViewNative: RCTViewManager,VMELifeCycleListener,VMEPlaceListener, VM
   
   func map(_ mapView: VMEMapView!, didDisplayPlaceInfo placeID: String!) {
     if(isListened(eventName: "onMapDidDisplayPlaceInfo")){
-      let displayInfoResult : [String : Any] = ["name":"onMapDidDisplayPlaceInfo", "callIndex":0, "result":getMapInfo(mapView)]
+      let displayInfoResult : [String : Any] = ["name":"onMapDidDisplayPlaceInfo", "callIndex":0, "result":[getMapInfo(mapView),placeID as Any]]
       VMEMapEvent.getSharedInstance().sendMapEvents(withName: "onMapEventReceived", body: displayInfoResult)
     }
   }

@@ -4,8 +4,9 @@ This project is a sample to show how to use VisioMoveEssential SDK with React Na
 Currently, only iOS (swift) version is available.
 
 ## Run the project - iOS
-* cd MapViewSampleReactNative/ios/
+* cd MapViewSampleReactNative/
 * npm install
+* cd ios/
 * pod install
 * If you have a licence, dowload the SDK in Visioglobe developer site
 * In the dowloaded folder, copy VisioMoveEssential.xcframework, VisioMoveEssential.bundle and VisioMoveEssentialStrings.bundle and add them to the ios folder
